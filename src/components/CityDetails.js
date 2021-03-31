@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import LandmarkDetails from './LandmarkDetails';
 
 const CityDetails = ({cityList,cityname,setcity}) => {
 
     console.log("in city details");
     console.log(`cityName${cityList[0].name}`);
+    const [landmark,setLandmark] = useState(0);
+    
+
+    const cityOptions =(arr)=>{
+        console.log("inside city options");
+        let cities = arr.map((city,index)=>{
+            console.log("in city fun"+arr[index].name);
+            return <option key ={index} value={index}>{arr[index].name}</option>
+        })
+        return cities;
+    }
+
     return (
         <>
         {/* <br/> */}
@@ -14,20 +27,21 @@ const CityDetails = ({cityList,cityname,setcity}) => {
                 <select id="city" value={cityname}
                 onChange={event=>{
                     let cityname = parseInt(event.target.value);
-                    setState(cityname);
+                    setcity(cityname);
                 }}>
                 {/* let index =0; */}
-                cityList.map((item,index)={
-                    <option value={index}>{item.name}</option>
-                })
+               {cityOptions(cityList)}
                 
-                    {/* <option value="0">Madhya Pradesh</option>
-                    <option value="1">Jkarkhand</option>
-                    <option value="2">Assam</option>
-                    <option value="3">Bihar</option> */}
                 </select>
             </div>
+            <div id="city-description">
+                {cityList[cityname].name}
+                <br/>
+                {cityList[cityname].description}
+            </div>
         </div>
+        <LandmarkDetails landmarkList={cityList[cityname].landmarks} 
+        landmarkName={landmark} setlandmark = {setLandmark}/>
         </>
     );
 };

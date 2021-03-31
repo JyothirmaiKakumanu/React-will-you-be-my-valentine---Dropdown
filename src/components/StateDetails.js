@@ -14,8 +14,9 @@ const StateDetails = ({statesList,stateName,setState}) => {
     //         <option value="0">{stateList[index].name}</option>
     //     })
     // }
-    const [cityName,setCity] = useState(0);
+    
     // const [showCity,setShowCity] = useState(false);
+    const [cityName,setCity] = useState(0);
 
     const stateOptions =(arr)=>{
         console.log("inside state options");
@@ -23,6 +24,7 @@ const StateDetails = ({statesList,stateName,setState}) => {
             console.log("in states fun"+arr[index].name);
             return <option key ={index} value={index}>{arr[index].name}</option>
         })
+        return states;
     }
 
 
@@ -57,7 +59,7 @@ const StateDetails = ({statesList,stateName,setState}) => {
 
         </div>
         
-        {/* <CityDetails cityList={statesList[stateName].city} cityname={cityName} setcity = {setCity}/> */}
+        <CityDetails cityList={statesList[stateName].city} cityname={cityName} setcity = {setCity}/>
         
         </>
 

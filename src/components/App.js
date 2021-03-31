@@ -1,6 +1,8 @@
 import React, { useState,useReducer } from "react";
 import "./../styles/App.css";
 import StateDetails from './StateDetails';
+import CityDetails from './CityDetails';
+import LandmarkDetails from './LandmarkDetails';
 
 
 const states = [{
@@ -146,6 +148,8 @@ function App()
 {
 
 	const [state,setstate] = useState(0);
+	
+	
 	// Do not alter/remove main div
 	console.log(states[0].name);
 	return (
@@ -154,16 +158,9 @@ function App()
 			<h1>DropDown</h1>
 			<StateDetails statesList={states} stateName = {state} setState={setstate}
 			/>
-
 			
-			{/* <div id="city-name">
-				<label>City:</label>
-				
-			</div>
-			<div id="landmark-name">
-				<label>Landmark:</label>
-				
-			</div> */}
+			
+
 		</div>
 	</div>
 	);
