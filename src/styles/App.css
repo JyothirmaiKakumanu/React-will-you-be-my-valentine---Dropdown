@@ -14,3 +14,21 @@ button{
 .bg-pink{
 	background-color:pink;
 }
+
+#state-details
+{
+    width:100%;
+    margin: 0 auto;
+    margin-top:75px;
+    height:100px;
+    border:0px solid black;
+}
+#state-title , #state-name, #state-description{
+    float:left;
+    width:25%;
+}
+
+#state-description{
+    border: 1px solid black;
+    width: 40%;
+}
