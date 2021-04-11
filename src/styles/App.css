@@ -15,7 +15,23 @@ button{
 	background-color:pink;
 }
 
-#state-details, #city-details , #landmark-details
+.description{
+    display: inline-block;
+    border: 1px solid black;
+    padding: 10px;
+    margin-left: 100px;
+    width: 300px;
+    text-align: left;
+    
+}
+
+.city , .landmark , .states{
+    width: 600px;
+  
+
+}
+
+/* #state-details, #city-details , #landmark-details
 {
     width:100%;
     margin: 0 auto;
@@ -51,4 +67,4 @@ button{
 #landmark-description{
     border: 1px solid black;
     width: 40%;
-}
+} */
